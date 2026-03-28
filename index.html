@@ -32,105 +32,39 @@
     }
     body::after {
       content: '';
-      position: fixed;
-      inset: 0;
+      position: fixed; inset: 0;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 9999;
+      pointer-events: none; z-index: 9999;
     }
     body::before {
-      content: '';
-      position: fixed;
-      top: -30vh; left: -20vw;
-      width: 70vw; height: 70vh;
+      content: ''; position: fixed;
+      top: -30vh; left: -20vw; width: 70vw; height: 70vh;
       background: radial-gradient(ellipse at center, rgba(30,207,234,0.03) 0%, transparent 65%);
-      pointer-events: none;
-      z-index: 0;
+      pointer-events: none; z-index: 0;
     }
-    .wrap {
-      position: relative; z-index: 1;
-      max-width: 640px; margin: 0 auto;
-      padding: 0 2rem; background: #000000;
-    }
+    .wrap { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; padding: 0 2rem; background: #000000; }
     header { padding: 16vh 0 0; opacity: 0; animation: rise 1s cubic-bezier(0.16,1,0.3,1) forwards 0.05s; }
-    .mono-tag {
-      font-family: 'Fragment Mono', monospace;
-      font-size: 0.62rem; color: var(--accent);
-      letter-spacing: 0.22em; text-transform: uppercase;
-      margin-bottom: 2.5rem; opacity: 0.7;
-    }
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700; font-size: clamp(3rem, 11vw, 5.8rem);
-      line-height: 1; letter-spacing: -0.025em;
-      color: var(--text); margin-bottom: 0.3em;
-    }
+    .mono-tag { font-family: 'Fragment Mono', monospace; font-size: 0.62rem; color: var(--accent); letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 2.5rem; opacity: 0.7; }
+    h1 { font-family: 'Playfair Display', serif; font-weight: 700; font-size: clamp(3rem, 11vw, 5.8rem); line-height: 1; letter-spacing: -0.025em; color: var(--text); margin-bottom: 0.3em; }
     h1 em { font-style: italic; font-weight: 400; color: var(--accent); }
-    .tagline {
-      font-family: 'Playfair Display', serif;
-      font-style: italic; font-size: clamp(0.95rem, 2.4vw, 1.15rem);
-      color: var(--softer); line-height: 1.55; margin-bottom: 4rem;
-    }
-    .nav-line {
-      display: flex; align-items: center; gap: 1.75rem;
-      padding: 1.3rem 0;
-      border-top: 1px solid var(--border-mid);
-      border-bottom: 1px solid var(--border-mid);
-      margin-bottom: 9vh; flex-wrap: wrap;
-      opacity: 0; animation: rise 0.8s ease forwards 0.3s;
-    }
-    .nav-link {
-      font-family: 'Fragment Mono', monospace;
-      font-size: 0.65rem; color: var(--muted);
-      text-decoration: none; letter-spacing: 0.09em;
-      transition: color 0.2s;
-    }
+    .tagline { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(0.95rem, 2.4vw, 1.15rem); color: var(--softer); line-height: 1.55; margin-bottom: 4rem; }
+    .nav-line { display: flex; align-items: center; gap: 1.75rem; padding: 1.3rem 0; border-top: 1px solid var(--border-mid); border-bottom: 1px solid var(--border-mid); margin-bottom: 9vh; flex-wrap: wrap; opacity: 0; animation: rise 0.8s ease forwards 0.3s; }
+    .nav-link { font-family: 'Fragment Mono', monospace; font-size: 0.65rem; color: var(--muted); text-decoration: none; letter-spacing: 0.09em; transition: color 0.2s; }
     .nav-link:hover { color: var(--accent); }
     .nav-sep { width: 1px; height: 10px; background: var(--border-mid); }
     .content { padding-bottom: 12vh; }
-    .block {
-      margin-bottom: 5rem; opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
-    }
+    .block { margin-bottom: 5rem; opacity: 0; transform: translateY(16px); transition: opacity 0.65s ease, transform 0.65s ease; }
     .block.visible { opacity: 1; transform: translateY(0); }
-    .block-label {
-      font-family: 'Fragment Mono', monospace;
-      font-size: 0.58rem; color: var(--accent);
-      letter-spacing: 0.22em; text-transform: uppercase;
-      margin-bottom: 1.5rem; opacity: 0.6;
-    }
-    .about-body {
-      font-size: 1rem; line-height: 1.95;
-      color: var(--text); opacity: 0.7; max-width: 520px;
-    }
+    .block-label { font-family: 'Fragment Mono', monospace; font-size: 0.58rem; color: var(--accent); letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 1.5rem; opacity: 0.6; }
+    .about-body { font-size: 1rem; line-height: 1.95; color: var(--text); opacity: 0.7; max-width: 520px; }
     .about-body p + p { margin-top: 1rem; }
     .about-body strong { font-weight: 400; color: var(--text); opacity: 1; }
-    .coffee-line {
-      font-family: 'Playfair Display', serif;
-      font-style: italic; font-size: 0.92rem;
-      color: var(--softer);
-      border-left: 1px solid var(--accent);
-      padding-left: 1rem; margin-top: 1.8rem;
-      line-height: 1.75; max-width: 420px;
-    }
+    .coffee-line { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.92rem; color: var(--softer); border-left: 1px solid var(--accent); padding-left: 1rem; margin-top: 1.8rem; line-height: 1.75; max-width: 420px; }
     .pills { display: flex; flex-wrap: wrap; gap: 0.45rem; }
-    .pill {
-      font-family: 'Fragment Mono', monospace;
-      font-size: 0.67rem; color: var(--softer);
-      border: 1px solid var(--border-mid);
-      padding: 0.35rem 0.8rem; letter-spacing: 0.04em;
-      background: var(--surface);
-      transition: color 0.2s, border-color 0.2s, background 0.2s;
-      cursor: default;
-    }
+    .pill { font-family: 'Fragment Mono', monospace; font-size: 0.67rem; color: var(--softer); border: 1px solid var(--border-mid); padding: 0.35rem 0.8rem; letter-spacing: 0.04em; background: var(--surface); transition: color 0.2s, border-color 0.2s, background 0.2s; cursor: default; }
     .pill:hover { color: var(--accent); border-color: rgba(30,207,234,0.25); background: var(--accent-dim); }
     .links-stack { display: flex; flex-direction: column; }
-    .ext-link {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 0.95rem 0; border-bottom: 1px solid var(--border-mid);
-      text-decoration: none; color: var(--text); transition: color 0.2s;
-    }
+    .ext-link { display: flex; justify-content: space-between; align-items: center; padding: 0.95rem 0; border-bottom: 1px solid var(--border-mid); text-decoration: none; color: var(--text); transition: color 0.2s; }
     .ext-link:first-child { border-top: 1px solid var(--border-mid); }
     .ext-link:hover { color: var(--accent); }
     .ext-link:hover .ext-arrow { transform: translate(3px,-3px); color: var(--accent); }
@@ -138,12 +72,7 @@
     .ext-name { font-size: 0.92rem; }
     .ext-handle { font-family: 'Fragment Mono', monospace; font-size: 0.62rem; color: var(--muted); }
     .ext-arrow { font-family: 'Fragment Mono', monospace; color: var(--muted); font-size: 0.72rem; transition: transform 0.2s, color 0.2s; flex-shrink: 0; }
-    footer {
-      padding: 2rem 0 4rem;
-      display: flex; justify-content: space-between; align-items: center;
-      border-top: 1px solid var(--border-mid);
-      opacity: 0; animation: rise 0.6s ease forwards 0.55s;
-    }
+    footer { padding: 2rem 0 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-mid); opacity: 0; animation: rise 0.6s ease forwards 0.55s; }
     .footer-text { font-family: 'Fragment Mono', monospace; font-size: 0.6rem; color: var(--muted); letter-spacing: 0.07em; }
     .pulse-wrap { display: flex; align-items: center; gap: 0.5rem; font-family: 'Fragment Mono', monospace; font-size: 0.6rem; color: var(--muted); }
     .pulse-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 7px var(--accent-glow); animation: throb 3s ease-in-out infinite; }
@@ -160,6 +89,8 @@
     <p class="tagline">An engineer that likes to talk —<br>ie a product manager.</p>
   </header>
   <nav class="nav-line">
+    <a class="nav-link" href="/notes">Notes</a>
+    <span class="nav-sep"></span>
     <a class="nav-link" href="https://dimnls.bsky.social" target="_blank" rel="noopener">Bluesky</a>
     <span class="nav-sep"></span>
     <a class="nav-link" href="https://github.com/dimnls" target="_blank" rel="noopener">GitHub</a>
