@@ -20,18 +20,8 @@
       --accent-dim:  rgba(30, 207, 234, 0.06);
       --accent-glow: rgba(30, 207, 234, 0.14);
     }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      background: #000000;
-    }
-
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; background: #000000; }
     body {
       background: #000000 !important;
       color: var(--text);
@@ -40,7 +30,6 @@
       min-height: 100vh;
       overflow-x: hidden;
     }
-
     body::after {
       content: '';
       position: fixed;
@@ -49,268 +38,127 @@
       pointer-events: none;
       z-index: 9999;
     }
-
     body::before {
       content: '';
       position: fixed;
-      top: -30vh;
-      left: -20vw;
-      width: 70vw;
-      height: 70vh;
+      top: -30vh; left: -20vw;
+      width: 70vw; height: 70vh;
       background: radial-gradient(ellipse at center, rgba(30,207,234,0.03) 0%, transparent 65%);
       pointer-events: none;
       z-index: 0;
     }
-
     .wrap {
-      position: relative;
-      z-index: 1;
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      background: #000000;
+      position: relative; z-index: 1;
+      max-width: 640px; margin: 0 auto;
+      padding: 0 2rem; background: #000000;
     }
-
-    header {
-      padding: 16vh 0 0;
-      opacity: 0;
-      animation: rise 1s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.05s;
-    }
-
+    header { padding: 16vh 0 0; opacity: 0; animation: rise 1s cubic-bezier(0.16,1,0.3,1) forwards 0.05s; }
     .mono-tag {
       font-family: 'Fragment Mono', monospace;
-      font-size: 0.62rem;
-      color: var(--accent);
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      margin-bottom: 2.5rem;
-      opacity: 0.7;
+      font-size: 0.62rem; color: var(--accent);
+      letter-spacing: 0.22em; text-transform: uppercase;
+      margin-bottom: 2.5rem; opacity: 0.7;
     }
-
     h1 {
       font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: clamp(3rem, 11vw, 5.8rem);
-      line-height: 1.0;
-      letter-spacing: -0.025em;
-      color: var(--text);
-      margin-bottom: 0.3em;
+      font-weight: 700; font-size: clamp(3rem, 11vw, 5.8rem);
+      line-height: 1; letter-spacing: -0.025em;
+      color: var(--text); margin-bottom: 0.3em;
     }
-
-    h1 em {
-      font-style: italic;
-      font-weight: 400;
-      color: var(--accent);
-    }
-
+    h1 em { font-style: italic; font-weight: 400; color: var(--accent); }
     .tagline {
       font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: clamp(0.95rem, 2.4vw, 1.15rem);
-      color: var(--softer);
-      line-height: 1.55;
-      margin-bottom: 4rem;
+      font-style: italic; font-size: clamp(0.95rem, 2.4vw, 1.15rem);
+      color: var(--softer); line-height: 1.55; margin-bottom: 4rem;
     }
-
     .nav-line {
-      display: flex;
-      align-items: center;
-      gap: 1.75rem;
+      display: flex; align-items: center; gap: 1.75rem;
       padding: 1.3rem 0;
       border-top: 1px solid var(--border-mid);
       border-bottom: 1px solid var(--border-mid);
-      margin-bottom: 9vh;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: rise 0.8s ease forwards 0.3s;
+      margin-bottom: 9vh; flex-wrap: wrap;
+      opacity: 0; animation: rise 0.8s ease forwards 0.3s;
     }
-
     .nav-link {
       font-family: 'Fragment Mono', monospace;
-      font-size: 0.65rem;
-      color: var(--muted);
-      text-decoration: none;
-      letter-spacing: 0.09em;
+      font-size: 0.65rem; color: var(--muted);
+      text-decoration: none; letter-spacing: 0.09em;
       transition: color 0.2s;
     }
-
     .nav-link:hover { color: var(--accent); }
-
-    .nav-sep {
-      width: 1px;
-      height: 10px;
-      background: var(--border-mid);
-    }
-
+    .nav-sep { width: 1px; height: 10px; background: var(--border-mid); }
     .content { padding-bottom: 12vh; }
-
     .block {
-      margin-bottom: 5rem;
-      opacity: 0;
+      margin-bottom: 5rem; opacity: 0;
       transform: translateY(16px);
       transition: opacity 0.65s ease, transform 0.65s ease;
     }
-
-    .block.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
+    .block.visible { opacity: 1; transform: translateY(0); }
     .block-label {
       font-family: 'Fragment Mono', monospace;
-      font-size: 0.58rem;
-      color: var(--accent);
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-      opacity: 0.6;
+      font-size: 0.58rem; color: var(--accent);
+      letter-spacing: 0.22em; text-transform: uppercase;
+      margin-bottom: 1.5rem; opacity: 0.6;
     }
-
     .about-body {
-      font-size: 1rem;
-      line-height: 1.95;
-      color: var(--text);
-      opacity: 0.7;
-      max-width: 520px;
+      font-size: 1rem; line-height: 1.95;
+      color: var(--text); opacity: 0.7; max-width: 520px;
     }
-
     .about-body p + p { margin-top: 1rem; }
-
-    .about-body strong {
-      font-weight: 400;
-      color: var(--text);
-      opacity: 1;
-    }
-
+    .about-body strong { font-weight: 400; color: var(--text); opacity: 1; }
     .coffee-line {
       font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 0.92rem;
+      font-style: italic; font-size: 0.92rem;
       color: var(--softer);
       border-left: 1px solid var(--accent);
-      padding-left: 1rem;
-      margin-top: 1.8rem;
-      line-height: 1.75;
-      max-width: 420px;
+      padding-left: 1rem; margin-top: 1.8rem;
+      line-height: 1.75; max-width: 420px;
     }
-
-    .pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-    }
-
+    .pills { display: flex; flex-wrap: wrap; gap: 0.45rem; }
     .pill {
       font-family: 'Fragment Mono', monospace;
-      font-size: 0.67rem;
-      color: var(--softer);
+      font-size: 0.67rem; color: var(--softer);
       border: 1px solid var(--border-mid);
-      padding: 0.35rem 0.8rem;
-      letter-spacing: 0.04em;
+      padding: 0.35rem 0.8rem; letter-spacing: 0.04em;
       background: var(--surface);
       transition: color 0.2s, border-color 0.2s, background 0.2s;
       cursor: default;
     }
-
-    .pill:hover {
-      color: var(--accent);
-      border-color: rgba(30,207,234,0.25);
-      background: var(--accent-dim);
-    }
-
+    .pill:hover { color: var(--accent); border-color: rgba(30,207,234,0.25); background: var(--accent-dim); }
     .links-stack { display: flex; flex-direction: column; }
-
     .ext-link {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.95rem 0;
-      border-bottom: 1px solid var(--border-mid);
-      text-decoration: none;
-      color: var(--text);
-      transition: color 0.2s;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0.95rem 0; border-bottom: 1px solid var(--border-mid);
+      text-decoration: none; color: var(--text); transition: color 0.2s;
     }
-
     .ext-link:first-child { border-top: 1px solid var(--border-mid); }
     .ext-link:hover { color: var(--accent); }
-    .ext-link:hover .ext-arrow { transform: translate(3px, -3px); color: var(--accent); }
-
+    .ext-link:hover .ext-arrow { transform: translate(3px,-3px); color: var(--accent); }
     .ext-left { display: flex; flex-direction: column; gap: 0.15rem; }
-    .ext-name  { font-size: 0.92rem; }
-
-    .ext-handle {
-      font-family: 'Fragment Mono', monospace;
-      font-size: 0.62rem;
-      color: var(--muted);
-    }
-
-    .ext-arrow {
-      font-family: 'Fragment Mono', monospace;
-      color: var(--muted);
-      font-size: 0.72rem;
-      transition: transform 0.2s, color 0.2s;
-      flex-shrink: 0;
-    }
-
+    .ext-name { font-size: 0.92rem; }
+    .ext-handle { font-family: 'Fragment Mono', monospace; font-size: 0.62rem; color: var(--muted); }
+    .ext-arrow { font-family: 'Fragment Mono', monospace; color: var(--muted); font-size: 0.72rem; transition: transform 0.2s, color 0.2s; flex-shrink: 0; }
     footer {
       padding: 2rem 0 4rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
       border-top: 1px solid var(--border-mid);
-      opacity: 0;
-      animation: rise 0.6s ease forwards 0.55s;
+      opacity: 0; animation: rise 0.6s ease forwards 0.55s;
     }
-
-    .footer-text {
-      font-family: 'Fragment Mono', monospace;
-      font-size: 0.6rem;
-      color: var(--muted);
-      letter-spacing: 0.07em;
-    }
-
-    .pulse-wrap {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: 'Fragment Mono', monospace;
-      font-size: 0.6rem;
-      color: var(--muted);
-    }
-
-    .pulse-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 7px var(--accent-glow);
-      animation: throb 3s ease-in-out infinite;
-    }
-
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes throb {
-      0%, 100% { opacity: 1;   transform: scale(1); }
-      50%       { opacity: 0.2; transform: scale(0.7); }
-    }
-
-    @media (max-width: 480px) {
-      .nav-line { gap: 1.2rem; }
-    }
+    .footer-text { font-family: 'Fragment Mono', monospace; font-size: 0.6rem; color: var(--muted); letter-spacing: 0.07em; }
+    .pulse-wrap { display: flex; align-items: center; gap: 0.5rem; font-family: 'Fragment Mono', monospace; font-size: 0.6rem; color: var(--muted); }
+    .pulse-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 7px var(--accent-glow); animation: throb 3s ease-in-out infinite; }
+    @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes throb { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.2; transform: scale(0.7); } }
+    @media (max-width: 480px) { .nav-line { gap: 1.2rem; } }
   </style>
 </head>
 <body>
 <div class="wrap">
-
   <header>
     <p class="mono-tag">dimitrios.im</p>
     <h1>I'm <em>Dimitrios.</em></h1>
     <p class="tagline">An engineer that likes to talk —<br>ie a product manager.</p>
   </header>
-
   <nav class="nav-line">
     <a class="nav-link" href="https://dimnls.bsky.social" target="_blank" rel="noopener">Bluesky</a>
     <span class="nav-sep"></span>
@@ -320,29 +168,15 @@
     <span class="nav-sep"></span>
     <a class="nav-link" href="mailto:hi@dimitrios.im">hi@dimitrios.im</a>
   </nav>
-
   <main class="content">
-
     <div class="block" id="about">
       <p class="block-label">// who</p>
       <div class="about-body">
-        <p>
-          I turn engineering instincts into product decisions — sometimes correctly.
-          Based in <strong>Barcelona</strong>, originally from <strong>Greece</strong>,
-          which explains the strong opinions about most things.
-        </p>
-        <p>
-          By day I work in tech. By night I build things that probably didn't need to exist
-          but definitely needed to be built. Big EDM listener — there's something about a
-          perfectly timed drop that scratches the same part of the brain as a product
-          decision finally clicking into place.
-        </p>
-        <p class="coffee-line">
-          Deeply committed to coffee. Mildly suspicious of people who aren't.
-        </p>
+        <p>I turn engineering instincts into product decisions — sometimes correctly. Based in <strong>Barcelona</strong>, originally from <strong>Greece</strong>, which explains the strong opinions about most things.</p>
+        <p>By day I work in tech. By night I build things that probably didn't need to exist but definitely needed to be built. Big EDM listener — there's something about a perfectly timed drop that scratches the same part of the brain as a product decision finally clicking into place.</p>
+        <p class="coffee-line">Deeply committed to coffee. Mildly suspicious of people who aren't.</p>
       </div>
     </div>
-
     <div class="block" id="interests">
       <p class="block-label">// on my mind</p>
       <div class="pills">
@@ -356,54 +190,36 @@
         <span class="pill">coffee</span>
       </div>
     </div>
-
     <div class="block" id="find">
       <p class="block-label">// find me</p>
       <div class="links-stack">
         <a class="ext-link" href="https://approximate.work" target="_blank" rel="noopener">
-          <div class="ext-left">
-            <span class="ext-name">approximate.work</span>
-            <span class="ext-handle">tools i've built</span>
-          </div>
+          <div class="ext-left"><span class="ext-name">approximate.work</span><span class="ext-handle">tools i've built</span></div>
           <span class="ext-arrow">↗</span>
         </a>
         <a class="ext-link" href="https://dimnls.bsky.social" target="_blank" rel="noopener">
-          <div class="ext-left">
-            <span class="ext-name">Bluesky</span>
-            <span class="ext-handle">dimnls.bsky.social</span>
-          </div>
+          <div class="ext-left"><span class="ext-name">Bluesky</span><span class="ext-handle">dimnls.bsky.social</span></div>
           <span class="ext-arrow">↗</span>
         </a>
         <a class="ext-link" href="https://github.com/dimnls" target="_blank" rel="noopener">
-          <div class="ext-left">
-            <span class="ext-name">GitHub</span>
-            <span class="ext-handle">dimnls</span>
-          </div>
+          <div class="ext-left"><span class="ext-name">GitHub</span><span class="ext-handle">dimnls</span></div>
           <span class="ext-arrow">↗</span>
         </a>
         <a class="ext-link" href="mailto:hi@dimitrios.im">
-          <div class="ext-left">
-            <span class="ext-name">Email</span>
-            <span class="ext-handle">hi@dimitrios.im</span>
-          </div>
+          <div class="ext-left"><span class="ext-name">Email</span><span class="ext-handle">hi@dimitrios.im</span></div>
           <span class="ext-arrow">↗</span>
         </a>
       </div>
     </div>
-
   </main>
-
   <footer>
     <span class="footer-text">barcelona · greece · © 2026</span>
     <span class="pulse-wrap"><span class="pulse-dot"></span>available for interesting conversations</span>
   </footer>
-
 </div>
 <script>
   const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-    });
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
   }, { threshold: 0.08 });
   document.querySelectorAll('.block').forEach(b => io.observe(b));
 </script>
